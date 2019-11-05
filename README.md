@@ -11,6 +11,7 @@
 ## Description
 
 [nestjs-shargea](https://github.com/denishamann/nestjs-shargea) is the backend of shargea made with Nest.
+Shargea is an expense manager app.
 
 ## Installation
 
