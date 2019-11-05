@@ -39,10 +39,17 @@ $ npm run test
 
 # test coverage
 $ npm run test:cov
+```
 
+## Documentation
+
+Documentation is available [here](https://denishamann.github.io/nestjs-shargea/)
+
+```bash
 # generate documentation
 $ npx compodoc -p tsconfig.json -s
 ```
+
 #### Postman collections:
 
 [API tests](https://documenter.getpostman.com/view/1173926/SW15yGV4)
