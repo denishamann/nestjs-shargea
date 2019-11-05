@@ -3,14 +3,14 @@
   <a href="http://shargea.com/" target="blank"><img src="https://i.ibb.co/j55pRyt/Artboard.png" width="320" alt="Shargea Logo" /></a>
 </p>
   
-<p align="center">An expense tracker made with Nest.</p>
+<p align="center">The backend of shargea made with Nest.</p>
 <p align="center">
 <a href="https://paypal.me/hamanndenis"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
 </p>
 
 ## Description
 
-[nestjs-shargea](https://github.com/denishamann/nestjs-shargea) is an expense tracker made with Nest.
+[nestjs-shargea](https://github.com/denishamann/nestjs-shargea) is the backend of shargea made with Nest.
 
 ## Installation
 
