@@ -1,9 +1,13 @@
 {
   "name": "nestjs-shargea",
   "version": "0.0.1",
-  "description": "",
+  "description": "Backend of shargea made with nest",
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denishamann/nestjs-shargea"
+  },
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -28,8 +32,11 @@
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.0",
+    "compression": "^1.7.4",
     "config": "^3.2.2",
     "crypto-random-string": "^3.0.1",
+    "express-rate-limit": "^5.0.0",
+    "helmet": "^3.21.2",
     "mailgun-js": "^0.22.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",

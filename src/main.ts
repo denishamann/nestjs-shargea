@@ -2,6 +2,9 @@ import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { Logger } from '@nestjs/common'
 import * as config from 'config'
+import * as helmet from 'helmet'
+import * as rateLimit from 'express-rate-limit'
+import * as compression from 'compression'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 
 async function bootstrap() {
@@ -13,7 +16,16 @@ async function bootstrap() {
 
   if (process.env.NODE_ENV === 'development') {
     app.enableCors()
+  } else {
+    app.use(
+      rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 10000, // limit each IP to 10000 requests per windowMs
+      }),
+    )
   }
+  app.use(compression())
+  app.use(helmet())
 
   const options = new DocumentBuilder()
     .setTitle('Shargea')
