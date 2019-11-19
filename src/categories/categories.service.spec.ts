@@ -24,6 +24,7 @@ const mockCategoryRepository = () => ({
 })
 const mockMediaService = () => ({
   deleteMedia: jest.fn(),
+  getMediaById: jest.fn(),
 })
 describe('CategoriesService', () => {
   let categoriesService
@@ -146,6 +147,7 @@ describe('CategoriesService', () => {
       expect(categoriesService.getCategoryById).not.toHaveBeenCalled()
       expect(categoriesService._checkForCyclic).not.toHaveBeenCalled()
       expect(categoryRepository.updateCategory).not.toHaveBeenCalled()
+      expect(mediaService.getMediaById).not.toHaveBeenCalled()
       expect(mediaService.deleteMedia).not.toHaveBeenCalled()
 
       const result = await categoriesService.updateCategory(dummyId, mockUpdateCategoryDto, mockUser)
@@ -153,6 +155,7 @@ describe('CategoriesService', () => {
       expect(categoriesService.getCategoryById).toHaveBeenCalledWith(dummyId, mockUser)
       expect(categoriesService._checkForCyclic).toHaveBeenCalledWith(dummyId, undefined, mockUser)
       expect(categoryRepository.updateCategory).toHaveBeenCalledWith(mockCategory, mockUpdateCategoryDto)
+      expect(mediaService.getMediaById).toHaveBeenCalledWith(yetAnotherDummyId, mockUser)
       expect(mediaService.deleteMedia).toHaveBeenCalledWith(anotherDummyId, mockUser)
       expect(result).toEqual('Some category')
     })

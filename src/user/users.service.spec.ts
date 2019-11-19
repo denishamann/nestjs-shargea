@@ -18,9 +18,12 @@ const mockUserRepository = () => ({
 
 const mockMediaService = () => ({
   deleteMedia: jest.fn(),
+  getMediaById: jest.fn(),
 })
 
-const mockCategoriesService = () => ({})
+const mockCategoriesService = () => ({
+  getCategoryById: jest.fn(),
+})
 
 describe('UsersService', () => {
   let usersService
@@ -87,9 +90,13 @@ describe('UsersService', () => {
       userRepository.updateUser.mockResolvedValue('Some value')
 
       expect(userRepository.updateUser).not.toHaveBeenCalled()
+      expect(mediaService.getMediaById).not.toHaveBeenCalled()
       expect(mediaService.deleteMedia).not.toHaveBeenCalled()
+      expect(categoriesService.getCategoryById).not.toHaveBeenCalled()
       const result = await usersService.updateUser(mockUpdateUserDto, mockUserBeforeUpdate)
       expect(userRepository.updateUser).toHaveBeenCalledWith(mockUpdateUserDto, mockUserBeforeUpdate)
+      expect(categoriesService.getCategoryById).toHaveBeenCalledWith(anotherDummyId, mockUserBeforeUpdate)
+      expect(mediaService.getMediaById).not.toHaveBeenCalled()
       expect(mediaService.deleteMedia).not.toHaveBeenCalled()
       expect(result).toEqual('Some value')
     })
@@ -112,9 +119,13 @@ describe('UsersService', () => {
       userRepository.updateUser.mockResolvedValue('Some value')
 
       expect(userRepository.updateUser).not.toHaveBeenCalled()
+      expect(mediaService.getMediaById).not.toHaveBeenCalled()
+      expect(categoriesService.getCategoryById).not.toHaveBeenCalled()
       expect(mediaService.deleteMedia).not.toHaveBeenCalled()
       const result = await usersService.updateUser(mockUpdateUserDto, mockUserBeforeUpdate)
       expect(userRepository.updateUser).toHaveBeenCalledWith(mockUpdateUserDto, mockUserBeforeUpdate)
+      expect(categoriesService.getCategoryById).not.toHaveBeenCalled()
+      expect(mediaService.getMediaById).toHaveBeenCalledWith(anotherDummyId, mockUserBeforeUpdate)
       expect(mediaService.deleteMedia).toHaveBeenCalledWith(mockUserBeforeUpdate.pictureId, mockUserBeforeUpdate)
       expect(result).toEqual('Some value')
     })

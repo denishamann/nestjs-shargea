@@ -25,6 +25,7 @@ const mockEntryRepository = () => ({
 })
 const mockMediaService = () => ({
   deleteMedia: jest.fn(),
+  getMediaById: jest.fn(),
 })
 const mockCategoriesService = () => ({})
 
@@ -131,12 +132,14 @@ describe('EntriesService', () => {
 
       expect(entriesService.getEntryById).not.toHaveBeenCalled()
       expect(entryRepository.updateEntry).not.toHaveBeenCalled()
+      expect(mediaService.getMediaById).not.toHaveBeenCalled()
       expect(mediaService.deleteMedia).not.toHaveBeenCalled()
 
       const result = await entriesService.updateEntry(dummyId, mockUpdateEntryDto, mockUser)
 
       expect(entriesService.getEntryById).toHaveBeenCalledWith(dummyId, mockUser)
       expect(entryRepository.updateEntry).toHaveBeenCalledWith(mockEntry, mockUpdateEntryDto)
+      expect(mediaService.getMediaById).toHaveBeenCalledWith(yetAnotherDummyId, mockUser)
       expect(mediaService.deleteMedia).toHaveBeenCalledWith(anotherDummyId, mockUser)
       expect(result).toEqual('Some entry')
     })
