@@ -7,6 +7,7 @@ import uuid from 'uuid'
 import { UpdateUserDto } from './update-user.dto'
 import { MediaService } from '../media/media.service'
 import { CategoriesService } from '../categories/categories.service'
+import { ConfigService } from '../config/config.service'
 
 @Injectable()
 export class UsersService {
@@ -18,6 +19,7 @@ export class UsersService {
     private readonly userRepository: UserRepository,
     private readonly mediaService: MediaService,
     private readonly categoriesService: CategoriesService,
+    private readonly configService: ConfigService,
   ) {
   }
 
@@ -26,7 +28,7 @@ export class UsersService {
   }
 
   signUp(authCredentialsDto: AuthCredentialsDto): Promise<User> {
-    return this.userRepository.signUp(authCredentialsDto)
+    return this.userRepository.signUp(authCredentialsDto, this.configService.isEmailVerificationEnabled)
   }
 
   validatePassword(authCrendentialsDto: AuthCredentialsDto): Promise<User> {

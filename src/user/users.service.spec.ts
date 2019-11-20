@@ -4,6 +4,7 @@ import { UserRepository } from './user.repository'
 import { MediaService } from '../media/media.service'
 import { UpdateUserDto } from './update-user.dto'
 import { CategoriesService } from '../categories/categories.service'
+import { ConfigService } from '../config/config.service'
 
 const dummyId = 'b3ad2d0f-89a3-43af-9a6c-891f4ca64198'
 const anotherDummyId = 'b3ad2d0f-89a3-43af-9a6c-891f4ca64199'
@@ -25,11 +26,16 @@ const mockCategoriesService = () => ({
   getCategoryById: jest.fn(),
 })
 
+const mockConfigService = () => ({
+  get: jest.fn().mockReturnValue('randomEnvValue'),
+})
+
 describe('UsersService', () => {
   let usersService
   let userRepository
   let mediaService
   let categoriesService
+  let configService
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
@@ -37,9 +43,11 @@ describe('UsersService', () => {
         UsersService,
         MediaService,
         CategoriesService,
+        ConfigService,
         { provide: UserRepository, useFactory: mockUserRepository },
         { provide: MediaService, useFactory: mockMediaService },
         { provide: CategoriesService, useFactory: mockCategoriesService },
+        { provide: ConfigService, useFactory: mockConfigService },
       ],
     }).compile()
 
@@ -47,6 +55,7 @@ describe('UsersService', () => {
     userRepository = await module.get<UserRepository>(UserRepository)
     mediaService = await module.get<MediaService>(MediaService)
     categoriesService = await module.get<CategoriesService>(CategoriesService)
+    configService = await module.get<ConfigService>(ConfigService)
 
   })
   describe('findOne', () => {
@@ -62,10 +71,10 @@ describe('UsersService', () => {
   describe('signUp', () => {
     it('should call signUp on the repository', async () => {
       userRepository.signUp.mockResolvedValue('Some value')
-
+      configService.isEmailVerificationEnabled = false
       expect(userRepository.signUp).not.toHaveBeenCalled()
       const result = await usersService.signUp('Auth dto')
-      expect(userRepository.signUp).toHaveBeenCalledWith('Auth dto')
+      expect(userRepository.signUp).toHaveBeenCalledWith('Auth dto', false)
       expect(result).toEqual('Some value')
     })
   })

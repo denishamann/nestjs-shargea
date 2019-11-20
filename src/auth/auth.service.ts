@@ -9,7 +9,7 @@ import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
 import * as uuid from 'uuid'
 import * as Mailgun from 'mailgun-js'
-import { emailConfig } from '../config/mailgun.config'
+import { ConfigService } from '../config/config.service'
 
 @Injectable()
 export class AuthService {
@@ -20,13 +20,14 @@ export class AuthService {
     private readonly verificationTokenRepository: Repository<VerificationTokenEntity>,
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
+    private readonly configService: ConfigService,
   ) {
   }
 
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { id } = await this.usersService.signUp(authCredentialsDto)
     // what to do if an error occur when sending email ?
-    if (emailConfig.verificationEnabled) {
+    if (this.configService.isEmailVerificationEnabled) {
       await this.saveTokenAndSendEmailVerification(authCredentialsDto, id)
     }
   }
@@ -61,16 +62,16 @@ export class AuthService {
     await verificationToken.save()
 
     const mailgun = new Mailgun({
-      apiKey: emailConfig.apiKey,
-      domain: emailConfig.domain,
-      host: 'api.eu.mailgun.net',
+      apiKey: this.configService.get('MAILGUN_API_KEY'),
+      domain: this.configService.get('EMAIL_VERIFICATION_DOMAIN'),
+      host: this.configService.get('EMAIL_VERIFICATION_HOST'),
     })
     const data = {
-      'from': emailConfig.from,
+      'from': this.configService.get('EMAIL_VERIFICATION_FROM'),
       'to': email,
       'subject': 'Please verify your Shargea account',
       'template': 'email_confirm',
-      'h:X-Mailgun-Variables': JSON.stringify({ hostname: emailConfig.hostname, token }),
+      'h:X-Mailgun-Variables': JSON.stringify({ hostname: this.configService.get('EMAIL_VERIFICATION_HOSTNAME'), token }),
     }
 
     try {

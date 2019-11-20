@@ -5,7 +5,7 @@ import { JwtService } from '@nestjs/jwt'
 import { NotFoundException, UnauthorizedException } from '@nestjs/common'
 import { VerificationTokenEntity } from './verification.token.entity'
 import { getRepositoryToken } from '@nestjs/typeorm'
-import { emailConfig } from '../config/mailgun.config'
+import { ConfigService } from '../config/config.service'
 
 const mockSend = jest.fn(() => Promise.resolve())
 jest.mock('mailgun-js', () => {
@@ -27,6 +27,10 @@ const mockJwtService = () => ({
   sign: jest.fn(),
 })
 
+const mockConfigService = () => ({
+  get: jest.fn().mockReturnValue('randomEnvValue'),
+})
+
 const mockVerificationTokenRepositoryFindOne = jest.fn()
 const mockVerificationTokenRepositoryCreate = jest.fn()
 
@@ -40,6 +44,7 @@ describe('AuthService', () => {
   let usersService
   let jwtService
   let repositoryMock
+  let configService
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
@@ -47,8 +52,10 @@ describe('AuthService', () => {
         AuthService,
         UsersService,
         JwtService,
+        ConfigService,
         { provide: UsersService, useFactory: mockUsersService },
         { provide: JwtService, useFactory: mockJwtService },
+        { provide: ConfigService, useFactory: mockConfigService },
         { provide: getRepositoryToken(VerificationTokenEntity), useFactory: mockVerificationTokenRepository },
       ],
     }).compile()
@@ -57,6 +64,7 @@ describe('AuthService', () => {
     usersService = await module.get<UsersService>(UsersService)
     jwtService = await module.get<JwtService>(JwtService)
     repositoryMock = await module.get(getRepositoryToken(VerificationTokenEntity))
+    configService = await module.get<ConfigService>(ConfigService)
 
   })
   describe('signUp', () => {
@@ -72,8 +80,7 @@ describe('AuthService', () => {
     it('should call signUp on usersService and send email verification', async () => {
       usersService.signUp.mockResolvedValue({ id: dummyId })
       authService.saveTokenAndSendEmailVerification = jest.fn().mockResolvedValue('Some value')
-      emailConfig.verificationEnabled = true
-
+      configService.isEmailVerificationEnabled = true
       expect(usersService.signUp).not.toHaveBeenCalled()
       await authService.signUp('authCredentialsDto')
       expect(usersService.signUp).toHaveBeenCalledWith('authCredentialsDto')
@@ -154,10 +161,6 @@ describe('AuthService', () => {
 
       const objAssign = global.Object.assign
       global.Object.assign = jest.fn().mockReturnValue(verificationToken)
-      emailConfig.apiKey = 'apikey'
-      emailConfig.domain = 'domain'
-      emailConfig.from = 'from'
-      emailConfig.hostname = 'hostname'
       mockVerificationTokenRepositoryCreate.mockReturnValue(verificationToken)
 
       expect(global.Object.assign).not.toHaveBeenCalled()

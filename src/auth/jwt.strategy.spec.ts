@@ -3,26 +3,35 @@ import { Test } from '@nestjs/testing'
 import { UnauthorizedException } from '@nestjs/common'
 import { User } from '../user/user.entity'
 import { UsersService } from '../user/users.service'
+import { ConfigService } from '../config/config.service'
 
 const mockUsersService = () => ({
   findOne: jest.fn(),
 })
 
+const mockConfigService = () => ({
+  get: jest.fn().mockReturnValue('randomEnvValue'),
+})
+
 describe('JwtStrategy', () => {
   let jwtStrategy: JwtStrategy
   let usersService
+  let configService
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       providers: [
         JwtStrategy,
         UsersService,
+        ConfigService,
         { provide: UsersService, useFactory: mockUsersService },
+        { provide: ConfigService, useFactory: mockConfigService },
       ],
     }).compile()
 
     jwtStrategy = await module.get<JwtStrategy>(JwtStrategy)
     usersService = await module.get<UsersService>(UsersService)
+    configService = await module.get<ConfigService>(ConfigService)
   })
 
   describe('validate', () => {

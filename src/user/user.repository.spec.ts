@@ -31,18 +31,18 @@ describe('UserRepository', () => {
 
     it('Should successfully sign up the user', async () => {
       save.mockResolvedValue('Some value')
-      const result = await userRepository.signUp(mockCredentialsDto)
+      const result = await userRepository.signUp(mockCredentialsDto, false)
       expect(result).toEqual('Some value')
     })
 
     it('Should throw a conflict exception because the email already exists', () => {
       save.mockRejectedValue({ code: PG_FOREIGN_KEY_CONSTRAINT_VIOLATION })
-      expect(userRepository.signUp(mockCredentialsDto)).rejects.toThrow(ConflictException)
+      expect(userRepository.signUp(mockCredentialsDto, false)).rejects.toThrow(ConflictException)
     })
 
     it('Should throw an internal server error exception', () => {
       save.mockRejectedValue({ code: 'unhandled code' })
-      expect(userRepository.signUp(mockCredentialsDto)).rejects.toThrow(InternalServerErrorException)
+      expect(userRepository.signUp(mockCredentialsDto, false)).rejects.toThrow(InternalServerErrorException)
     })
   })
 

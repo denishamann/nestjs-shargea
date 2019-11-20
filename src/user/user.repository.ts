@@ -4,7 +4,6 @@ import { AuthCredentialsDto } from '../auth/dto/auth-credentials.dto'
 import { BadRequestException, ConflictException, InternalServerErrorException } from '@nestjs/common'
 import * as bcrypt from 'bcryptjs'
 import { UpdateUserDto } from './update-user.dto'
-import { emailConfig } from '../config/mailgun.config'
 
 const PG_UNIQUE_CONSTRAINT_VIOLATION = '23505'
 const PG_FOREIGN_KEY_CONSTRAINT_VIOLATION = '23503'
@@ -16,12 +15,12 @@ export class UserRepository extends Repository<User> {
     return bcrypt.hash(password, salt)
   }
 
-  async signUp(authCredentialsDto: AuthCredentialsDto): Promise<User> {
+  async signUp(authCredentialsDto: AuthCredentialsDto, verificationEnabled: boolean): Promise<User> {
     const { email, password } = authCredentialsDto
     const salt = await bcrypt.genSalt()
     const user = Object.assign(this.create(), {
       email,
-      verified: !emailConfig.verificationEnabled,
+      verified: !verificationEnabled,
       password: await UserRepository._hashPassword(password, salt),
     })
     try {
