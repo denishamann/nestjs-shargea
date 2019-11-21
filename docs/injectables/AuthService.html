@@ -125,7 +125,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(verificationTokenRepository: <a href="../classes/VerificationTokenEntity.html">Repository<VerificationTokenEntity></a>, usersService: <a href="../injectables/UsersService.html">UsersService</a>, jwtService: JwtService)</code>
+<code>constructor(verificationTokenRepository: <a href="../classes/VerificationTokenEntity.html">Repository<VerificationTokenEntity></a>, usersService: <a href="../injectables/UsersService.html">UsersService</a>, jwtService: JwtService, configService: <a href="../classes/ConfigService.html">ConfigService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -183,6 +183,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/ConfigService.html" target="_self" >ConfigService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -222,8 +234,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/auth/auth.service.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/auth/auth.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -306,8 +318,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/auth/auth.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/auth/auth.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -378,8 +390,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/auth/auth.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/auth/auth.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -450,8 +462,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/auth/auth.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/auth/auth.service.ts:48</a></div>
                 </td>
             </tr>
 
@@ -548,7 +560,7 @@ import { Repository } from &#x27;typeorm&#x27;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;
 import * as uuid from &#x27;uuid&#x27;
 import * as Mailgun from &#x27;mailgun-js&#x27;
-import { emailConfig } from &#x27;../config/mailgun.config&#x27;
+import { ConfigService } from &#x27;../config/config.service&#x27;
 
 @Injectable()
 export class AuthService {
@@ -559,13 +571,14 @@ export class AuthService {
     private readonly verificationTokenRepository: Repository&lt;VerificationTokenEntity&gt;,
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
+    private readonly configService: ConfigService,
   ) {
   }
 
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise&lt;void&gt; {
     const { id } &#x3D; await this.usersService.signUp(authCredentialsDto)
     // what to do if an error occur when sending email ?
-    if (emailConfig.verificationEnabled) {
+    if (this.configService.isEmailVerificationEnabled) {
       await this.saveTokenAndSendEmailVerification(authCredentialsDto, id)
     }
   }
@@ -600,16 +613,16 @@ export class AuthService {
     await verificationToken.save()
 
     const mailgun &#x3D; new Mailgun({
-      apiKey: emailConfig.apiKey,
-      domain: emailConfig.domain,
-      host: &#x27;api.eu.mailgun.net&#x27;,
+      apiKey: this.configService.get(&#x27;MAILGUN_API_KEY&#x27;),
+      domain: this.configService.get(&#x27;EMAIL_VERIFICATION_DOMAIN&#x27;),
+      host: this.configService.get(&#x27;EMAIL_VERIFICATION_HOST&#x27;),
     })
     const data &#x3D; {
-      &#x27;from&#x27;: emailConfig.from,
+      &#x27;from&#x27;: this.configService.get(&#x27;EMAIL_VERIFICATION_FROM&#x27;),
       &#x27;to&#x27;: email,
       &#x27;subject&#x27;: &#x27;Please verify your Shargea account&#x27;,
       &#x27;template&#x27;: &#x27;email_confirm&#x27;,
-      &#x27;h:X-Mailgun-Variables&#x27;: JSON.stringify({ hostname: emailConfig.hostname, token }),
+      &#x27;h:X-Mailgun-Variables&#x27;: JSON.stringify({ hostname: this.configService.get(&#x27;EMAIL_VERIFICATION_HOSTNAME&#x27;), token }),
     }
 
     try {

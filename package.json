@@ -21,7 +21,8 @@
     "test": "NODE_ENV=development jest",
     "test:watch": "NODE_ENV=development jest --watch",
     "test:cov": "NODE_ENV=development jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "doc:generate": "npx compodoc -p tsconfig.json -d docs"
   },
   "dependencies": {
     "@hapi/joi": "^16.1.7",

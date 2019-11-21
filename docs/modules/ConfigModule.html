@@ -34,7 +34,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>AuthModule</li>
+    <li>ConfigModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -62,42 +62,30 @@
 <polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
-<title>cluster_AuthModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="107,-70 107,-195 389,-195 389,-70 107,-70"/>
+<title>cluster_ConfigModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="182,-70 182,-195 314,-195 314,-70 182,-70"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_AuthModule_providers</title>
-<polygon fill="none" stroke="#000000" points="115,-78 115,-130 381,-130 381,-78 115,-78"/>
+<g id="clust4" class="cluster">
+<title>cluster_ConfigModule_exports</title>
+<polygon fill="none" stroke="#000000" points="190,-135 190,-187 306,-187 306,-135 190,-135"/>
 </g>
-<!-- AuthService -->
+<!-- ConfigService  -->
 <g id="node1" class="node">
-<title>AuthService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="314" cy="-104" rx="59.1083" ry="18"/>
-<text text-anchor="middle" x="314" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AuthService</text>
+<title>ConfigService </title>
+<polygon fill="#fb8072" stroke="#000000" points="298.3661,-179 197.6339,-179 197.6339,-143 298.3661,-143 298.3661,-179"/>
+<text text-anchor="middle" x="248" y="-156.8" font-family="Times,serif" font-size="14.00" fill="#000000">ConfigService </text>
 </g>
-<!-- AuthModule -->
-<g id="node3" class="node">
-<title>AuthModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="290.5482,-187 287.5482,-191 266.5482,-191 263.5482,-187 203.4518,-187 203.4518,-151 290.5482,-151 290.5482,-187"/>
-<text text-anchor="middle" x="247" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AuthModule</text>
-</g>
-<!-- AuthService&#45;&gt;AuthModule -->
-<g id="edge1" class="edge">
-<title>AuthService&#45;&gt;AuthModule</title>
-<path fill="none" stroke="#000000" d="M272.7348,-117.1537C272.7348,-117.1537 272.7348,-140.6938 272.7348,-140.6938"/>
-<polygon fill="#000000" stroke="#000000" points="269.2349,-140.6938 272.7348,-150.6938 276.2349,-140.6939 269.2349,-140.6938"/>
-</g>
-<!-- JwtStrategy -->
+<!-- ConfigModule -->
 <g id="node2" class="node">
-<title>JwtStrategy</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="180" cy="-104" rx="56.7561" ry="18"/>
-<text text-anchor="middle" x="180" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">JwtStrategy</text>
+<title>ConfigModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="297.4386,-114 294.4386,-118 273.4386,-118 270.4386,-114 198.5614,-114 198.5614,-78 297.4386,-78 297.4386,-114"/>
+<text text-anchor="middle" x="248" y="-91.8" font-family="Times,serif" font-size="14.00" fill="#000000">ConfigModule</text>
 </g>
-<!-- JwtStrategy&#45;&gt;AuthModule -->
-<g id="edge2" class="edge">
-<title>JwtStrategy&#45;&gt;AuthModule</title>
-<path fill="none" stroke="#000000" d="M219.9272,-116.8419C219.9272,-116.8419 219.9272,-140.5231 219.9272,-140.5231"/>
-<polygon fill="#000000" stroke="#000000" points="216.4273,-140.523 219.9272,-150.5231 223.4273,-140.5231 216.4273,-140.523"/>
+<!-- ConfigModule&#45;&gt;ConfigService  -->
+<g id="edge1" class="edge">
+<title>ConfigModule&#45;&gt;ConfigService </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-114.1061C248,-114.1061 248,-132.991 248,-132.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-132.9909 248,-142.991 251.5001,-132.991 244.5001,-132.9909"/>
 </g>
 </g>
 </svg>
@@ -129,7 +117,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/auth.module.ts</code>
+            <code>src/config/config.module.ts</code>
         </p>
 
 
@@ -138,23 +126,11 @@
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
-                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../injectables/AuthService.html">AuthService</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../injectables/JwtStrategy.html">JwtStrategy</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Controllers<a href="https://docs.nestjs.com/controllers" target="_blank" title="Official documentation about module controllers"><span
+                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="../controllers/AuthController.html">AuthController</a>
+                            <a href="../s/ConfigService.html">ConfigService</a>
                         </li>
                     </ul>
                 </div>
@@ -166,43 +142,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Module } from &#x27;@nestjs/common&#x27;
-import { AuthController } from &#x27;./auth.controller&#x27;
-import { AuthService } from &#x27;./auth.service&#x27;
-import { JwtModule } from &#x27;@nestjs/jwt&#x27;
-import { PassportModule } from &#x27;@nestjs/passport&#x27;
-import { JwtStrategy } from &#x27;./jwt.strategy&#x27;
-import { UsersModule } from &#x27;../user/users.module&#x27;
-import { VerificationTokenEntity } from &#x27;./verification.token.entity&#x27;
-import { TypeOrmModule } from &#x27;@nestjs/typeorm&#x27;
-import { ConfigModule } from &#x27;../config/config.module&#x27;
-import { ConfigService } from &#x27;../config/config.service&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Global, Module } from &#x27;@nestjs/common&#x27;
+import { ConfigService } from &#x27;./config.service&#x27;
 
+@Global()
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([VerificationTokenEntity]),
-    PassportModule.register({ defaultStrategy: &#x27;jwt&#x27; }),
-    JwtModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) &#x3D;&gt; ({
-        secret: process.env.JWT_SECRET || configService.get(&#x27;JWT_SECRET&#x27;),
-        signOptions: { expiresIn: configService.get(&#x27;JWT_EXPIRES_IN&#x27;) },
-      }),
-      inject: [ConfigService],
-    }),
-    forwardRef(() &#x3D;&gt; UsersModule),
-  ],
-  controllers: [AuthController],
   providers: [
-    AuthService,
-    JwtStrategy,
+    {
+      provide: ConfigService,
+      useValue: new ConfigService(&#x60;${process.env.NODE_ENV || &#x27;development&#x27;}.env&#x60;),
+    },
   ],
-  exports: [
-    PassportModule,
-  ],
+  exports: [ConfigService],
 })
-
-export class AuthModule {
+export class ConfigModule {
 }
 </code></pre>
     </div>
@@ -239,7 +192,7 @@ export class AuthModule {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConfigModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
