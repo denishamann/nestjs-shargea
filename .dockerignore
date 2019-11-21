@@ -1,0 +1,7 @@
+*
+!src/
+src/*.spec.ts
+!package.json
+!package-lock.json
+!tsconfig.json
+!tsconfig.build.json

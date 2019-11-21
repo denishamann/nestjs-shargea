@@ -13,24 +13,6 @@ export class ConfigService {
     this.envConfig = ConfigService.validateInput(config)
   }
 
-  private static mergeVariables(filePath): EnvConfig {
-    const envFileVars = dotenv.parse(fs.readFileSync(filePath))
-    const envVars = ConfigService.readEnvVars()
-    return { ...envFileVars, ...envVars }
-  }
-
-  private static readEnvVars(): EnvConfig {
-    const envVars = {}
-    Object.keys(ConfigService.VALIDATION_SCHEMA).forEach((key) => {
-      if (process.env[key] === undefined) {
-        return
-      }
-      envVars[key] = process.env[key]
-    })
-
-    return envVars
-  }
-
   private static get VALIDATION_SCHEMA(): SchemaMap {
     return {
       CORS_ENABLED: Joi.boolean().optional().default(false),
@@ -51,9 +33,50 @@ export class ConfigService {
       MAILGUN_API_KEY: Joi.string().optional(),
       EMAIL_VERIFICATION_DOMAIN: Joi.string().optional(),
       EMAIL_VERIFICATION_FROM: Joi.string().optional(),
+      EMAIL_VERIFICATION_HOST: Joi.string().optional(),
       EMAIL_VERIFICATION_HOSTNAME: Joi.string().optional(),
 
     }
+  }
+
+  get isCorsEnabled(): boolean {
+    return Boolean(this.envConfig.CORS_ENABLED)
+  }
+
+  get isRateLimitEnabled(): boolean {
+    return Boolean(this.envConfig.RATE_LIMIT_ENABLED)
+  }
+
+  get isEmailVerificationEnabled(): boolean {
+    return Boolean(this.envConfig.EMAIL_VERIFICATION_ENABLED)
+  }
+
+  get isDbSynchronized(): boolean {
+    return Boolean(this.envConfig.DB_SYNCHRONIZE)
+  }
+
+  private static mergeVariables(filePath): EnvConfig {
+    let envFileVars
+
+    try {
+      envFileVars = dotenv.parse(fs.readFileSync(filePath))
+    } catch (e) {
+      envFileVars = []
+    }
+    const envVars = ConfigService.readEnvVars()
+    return { ...envFileVars, ...envVars }
+  }
+
+  private static readEnvVars(): EnvConfig {
+    const envVars = {}
+    Object.keys(ConfigService.VALIDATION_SCHEMA).forEach((key) => {
+      if (process.env[key] === undefined) {
+        return
+      }
+      envVars[key] = process.env[key]
+    })
+
+    return envVars
   }
 
   /**
@@ -74,21 +97,5 @@ export class ConfigService {
 
   get(key: string): string {
     return this.envConfig[key]
-  }
-
-  get isCorsEnabled(): boolean {
-    return Boolean(this.envConfig.CORS_ENABLED)
-  }
-
-  get isRateLimitEnabled(): boolean {
-    return Boolean(this.envConfig.RATE_LIMIT_ENABLED)
-  }
-
-  get isEmailVerificationEnabled(): boolean {
-    return Boolean(this.envConfig.EMAIL_VERIFICATION_ENABLED)
-  }
-
-  get isDbSynchronized(): boolean {
-    return Boolean(this.envConfig.DB_SYNCHRONIZE)
   }
 }
