@@ -3,7 +3,7 @@ ENV NODE_ENV build
 USER node
 WORKDIR /home/node
 COPY . /home/node
-RUN npm install && npm run build
+RUN npm install && npm run test && npm run build
 # ---
 FROM node:12-alpine
 ENV NODE_ENV production
