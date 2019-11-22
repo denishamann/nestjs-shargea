@@ -20,6 +20,7 @@ export class ConfigService {
       RATE_LIMIT_WINDOW_IN_MINUTE: Joi.number().optional().default(15),
       RATE_LIMIT_MAX: Joi.number().optional().default(10000),
       SERVER_PORT: Joi.number().optional().default(3000),
+      SWAGGER_SCHEME: Joi.string().optional().valid('http', 'https').default('http'),
       DB_TYPE: Joi.string().optional().default('postgres'),
       DB_PORT: Joi.number().optional().default(5432),
       DB_HOST: Joi.string().required(),

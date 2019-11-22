@@ -32,9 +32,10 @@ async function bootstrap() {
     .setDescription('The Shargea API description')
     .setVersion('1.0')
     .addBearerAuth()
+    .setSchemes(configService.get('SWAGGER_SCHEME') as 'http' | 'https')
     .build()
   const document = SwaggerModule.createDocument(app, options)
-  SwaggerModule.setup('api', app, document)
+  SwaggerModule.setup('swagger', app, document)
 
   await app.listen(configService.get('SERVER_PORT'))
   logger.log(`Application listening on port ${configService.get('SERVER_PORT')}`)
