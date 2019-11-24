@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>EntryRepository</li>
+  <li>TransactionRepository</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/entries/entry.repository.ts</code>
+            <code>src/transactions/transaction.repository.ts</code>
         </p>
 
 
@@ -103,15 +103,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createEntry">createEntry</a>
+                                <a href="#createTransaction">createTransaction</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getEntries">getEntries</a>
+                                <a href="#getTransactions">getTransactions</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#updateEntry">updateEntry</a>
+                                <a href="#updateTransaction">updateTransaction</a>
                             </li>
                         </ul>
                     </td>
@@ -146,12 +146,12 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Logger(&#x27;EntryRepository&#x27;)</code>
+                            <i>Default value : </i><code>new Logger(&#x27;TransactionRepository&#x27;)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/entries/entry.repository.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/transactions/transaction.repository.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -169,20 +169,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createEntry"></a>
+                    <a name="createTransaction"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            createEntry
+                            createTransaction
                         </b>
-                        <a href="#createEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#createTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createEntry(createEntryDto: <a href="../classes/CreateEntryDto.html">CreateEntryDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+                    <code>createTransaction(createTransactionDto: <a href="../classes/CreateTransactionDto.html">CreateTransactionDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -190,7 +190,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/entries/entry.repository.ts:36</a></div>
+                            class="link-to-prism">src/transactions/transaction.repository.ts:36</a></div>
                 </td>
             </tr>
 
@@ -210,9 +210,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>createEntryDto</td>
+                                    <td>createTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/CreateEntryDto.html" target="_self" >CreateEntryDto</a></code>
+                                                <code><a href="../classes/CreateTransactionDto.html" target="_self" >CreateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -239,7 +239,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -253,20 +253,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getEntries"></a>
+                    <a name="getTransactions"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            getEntries
+                            getTransactions
                         </b>
-                        <a href="#getEntries"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getTransactions"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getEntries(filterDto: <a href="../classes/GetEntriesFilterDto.html">GetEntriesFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+                    <code>getTransactions(filterDto: <a href="../classes/GetTransactionsFilterDto.html">GetTransactionsFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -274,7 +274,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/entries/entry.repository.ts:16</a></div>
+                            class="link-to-prism">src/transactions/transaction.repository.ts:16</a></div>
                 </td>
             </tr>
 
@@ -296,7 +296,7 @@
                                 <tr>
                                     <td>filterDto</td>
                                     <td>
-                                                <code><a href="../classes/GetEntriesFilterDto.html" target="_self" >GetEntriesFilterDto</a></code>
+                                                <code><a href="../classes/GetTransactionsFilterDto.html" target="_self" >GetTransactionsFilterDto</a></code>
                                     </td>
 
                                     <td>
@@ -323,7 +323,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -337,20 +337,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateEntry"></a>
+                    <a name="updateTransaction"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            updateEntry
+                            updateTransaction
                         </b>
-                        <a href="#updateEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateEntry(entry: <a href="../classes/Entry.html">Entry</a>, updateEntryDto: <a href="../classes/UpdateEntryDto.html">UpdateEntryDto</a>)</code>
+                    <code>updateTransaction(transaction: <a href="../classes/Transaction.html">Transaction</a>, updateTransactionDto: <a href="../classes/UpdateTransactionDto.html">UpdateTransactionDto</a>)</code>
                 </td>
             </tr>
 
@@ -358,7 +358,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/entries/entry.repository.ts:51</a></div>
+                            class="link-to-prism">src/transactions/transaction.repository.ts:51</a></div>
                 </td>
             </tr>
 
@@ -378,9 +378,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>entry</td>
+                                    <td>transaction</td>
                                     <td>
-                                                <code><a href="../classes/Entry.html" target="_self" >Entry</a></code>
+                                                <code><a href="../classes/Transaction.html" target="_self" >Transaction</a></code>
                                     </td>
 
                                     <td>
@@ -390,9 +390,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateEntryDto</td>
+                                    <td>updateTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/UpdateEntryDto.html" target="_self" >UpdateEntryDto</a></code>
+                                                <code><a href="../classes/UpdateTransactionDto.html" target="_self" >UpdateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -428,21 +428,21 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { EntityRepository, Like, Repository } from &#x27;typeorm&#x27;
-import { Entry } from &#x27;./entry.entity&#x27;
-import { CreateEntryDto } from &#x27;./dto/create-entry.dto&#x27;
-import { GetEntriesFilterDto } from &#x27;./dto/get-entries-filter.dto&#x27;
+import { Transaction } from &#x27;./transaction.entity&#x27;
+import { CreateTransactionDto } from &#x27;./dto/create-transaction.dto&#x27;
+import { GetTransactionsFilterDto } from &#x27;./dto/get-transactions-filter.dto&#x27;
 import { User } from &#x27;../user/user.entity&#x27;
 import { BadRequestException, InternalServerErrorException, Logger } from &#x27;@nestjs/common&#x27;
-import { UpdateEntryDto } from &#x27;./dto/update-entry.dto&#x27;
+import { UpdateTransactionDto } from &#x27;./dto/update-transaction.dto&#x27;
 
 const PG_UNIQUE_CONSTRAINT_VIOLATION &#x3D; &#x27;23505&#x27;
 const PG_FOREIGN_KEY_CONSTRAINT_VIOLATION &#x3D; &#x27;23503&#x27;
 
-@EntityRepository(Entry)
-export class EntryRepository extends Repository&lt;Entry&gt; {
-  private logger &#x3D; new Logger(&#x27;EntryRepository&#x27;)
+@EntityRepository(Transaction)
+export class TransactionRepository extends Repository&lt;Transaction&gt; {
+  private logger &#x3D; new Logger(&#x27;TransactionRepository&#x27;)
 
-  async getEntries(filterDto: GetEntriesFilterDto, user: User): Promise&lt;Entry[]&gt; {
+  async getTransactions(filterDto: GetTransactionsFilterDto, user: User): Promise&lt;Transaction[]&gt; {
     const { search } &#x3D; filterDto
     try {
       const where &#x3D; search ? [
@@ -457,35 +457,35 @@ export class EntryRepository extends Repository&lt;Entry&gt; {
       ] : { userId: user.id }
       return await this.find({ where })
     } catch (e) {
-      this.logger.error(&#x60;Failed to get entries for User &quot;${user.email}&quot;. Filters: ${JSON.stringify(filterDto)}&#x60;, e.stack)
+      this.logger.error(&#x60;Failed to get transactions for User &quot;${user.email}&quot;. Filters: ${JSON.stringify(filterDto)}&#x60;, e.stack)
       throw new InternalServerErrorException()
     }
   }
 
-  async createEntry(createEntryDto: CreateEntryDto, user: User): Promise&lt;Entry&gt; {
-    const entry &#x3D; Object.assign(new Entry(), createEntryDto, { user })
+  async createTransaction(createTransactionDto: CreateTransactionDto, user: User): Promise&lt;Transaction&gt; {
+    const transaction &#x3D; Object.assign(new Transaction(), createTransactionDto, { user })
     try {
-      return await entry.save()
+      return await transaction.save()
     } catch (e) {
-      this.logger.error(&#x60;Failed to create entry for User &quot;${user.email}&quot;. Data: ${JSON.stringify(createEntryDto)}&#x60;, e.stack)
+      this.logger.error(&#x60;Failed to create transaction for User &quot;${user.email}&quot;. Data: ${JSON.stringify(createTransactionDto)}&#x60;, e.stack)
       if (e.code &#x3D;&#x3D;&#x3D; PG_FOREIGN_KEY_CONSTRAINT_VIOLATION) {
         throw new BadRequestException(&#x27;Invalid mediaId or categoryId provided.&#x27;)
       } else if (e.code &#x3D;&#x3D;&#x3D; PG_UNIQUE_CONSTRAINT_VIOLATION) {
-        throw new BadRequestException(&#x60;Media with ID &quot;${entry.id}&quot; is already linked with another entity.&#x60;)
+        throw new BadRequestException(&#x60;Media with ID &quot;${transaction.id}&quot; is already linked with another entity.&#x60;)
       }
       throw new InternalServerErrorException()
     }
   }
 
-  async updateEntry(entry: Entry, updateEntryDto: UpdateEntryDto) {
-    const updatedEntry &#x3D; Object.assign(entry, updateEntryDto)
+  async updateTransaction(transaction: Transaction, updateTransactionDto: UpdateTransactionDto) {
+    const updatedTransaction &#x3D; Object.assign(transaction, updateTransactionDto)
     try {
-      return await updatedEntry.save()
+      return await updatedTransaction.save()
     } catch (e) {
       if (e.code &#x3D;&#x3D;&#x3D; PG_FOREIGN_KEY_CONSTRAINT_VIOLATION) {
-        throw new BadRequestException(&#x60;Invalid mediaId or categoryId provided for category with ID &quot;${entry.id}&quot;.&#x60;)
+        throw new BadRequestException(&#x60;Invalid mediaId or categoryId provided for category with ID &quot;${transaction.id}&quot;.&#x60;)
       } else if (e.code &#x3D;&#x3D;&#x3D; PG_UNIQUE_CONSTRAINT_VIOLATION) {
-        throw new BadRequestException(&#x60;Media with ID &quot;${entry.id}&quot; is already linked with another entity.&#x60;)
+        throw new BadRequestException(&#x60;Media with ID &quot;${transaction.id}&quot; is already linked with another entity.&#x60;)
       }
       throw new InternalServerErrorException()
     }
@@ -519,7 +519,7 @@ export class EntryRepository extends Repository&lt;Entry&gt; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'EntryRepository.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TransactionRepository.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -264,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/config/config.service.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/config/config.service.ts:99</a></div>
                 </td>
             </tr>
 
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/config/config.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/config/config.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -406,8 +406,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/config/config.service.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/config/config.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/config/config.service.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/config/config.service.ts:87</a></div>
                 </td>
             </tr>
 
@@ -547,7 +547,7 @@ including the applied default values.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/config/config.service.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/config/config.service.ts:43</a></div>
                                 </td>
                             </tr>
 
@@ -569,7 +569,7 @@ including the applied default values.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/config/config.service.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/config/config.service.ts:47</a></div>
                                 </td>
                             </tr>
 
@@ -591,7 +591,7 @@ including the applied default values.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/config/config.service.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/config/config.service.ts:51</a></div>
                                 </td>
                             </tr>
 
@@ -613,7 +613,7 @@ including the applied default values.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/config/config.service.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/config/config.service.ts:55</a></div>
                                 </td>
                             </tr>
 
@@ -646,6 +646,7 @@ export class ConfigService {
       RATE_LIMIT_WINDOW_IN_MINUTE: Joi.number().optional().default(15),
       RATE_LIMIT_MAX: Joi.number().optional().default(10000),
       SERVER_PORT: Joi.number().optional().default(3000),
+      SWAGGER_SCHEME: Joi.string().optional().valid(&#x27;http&#x27;, &#x27;https&#x27;).default(&#x27;http&#x27;),
       DB_TYPE: Joi.string().optional().default(&#x27;postgres&#x27;),
       DB_PORT: Joi.number().optional().default(5432),
       DB_HOST: Joi.string().required(),

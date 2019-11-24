@@ -53,9 +53,9 @@ $ npx compodoc -p tsconfig.json -s
 
 #### Postman collections:
 
-[API tests](https://documenter.getpostman.com/view/1173926/SW15yGV4)
+[API tests](https://documenter.getpostman.com/view/1173926/SW7dURJ6)
 
-[Integration tests](https://documenter.getpostman.com/view/1173926/SW15yGV6)
+[Integration tests](https://documenter.getpostman.com/view/1173926/SW7dURJ7)
 
 ## Support
 

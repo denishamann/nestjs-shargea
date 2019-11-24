@@ -1,6 +1,6 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn, VersionColumn } from 'typeorm'
 import { User } from '../user/user.entity'
-import { Entry } from '../entries/entry.entity'
+import { Transaction } from '../transactions/transaction.entity'
 import { Category } from '../categories/category.entity'
 import { MediaType } from './media-type.enum'
 import uuid from 'uuid'
@@ -54,8 +54,8 @@ export class Media extends BaseEntity {
   userForPicture: User
 
   @Exclude()
-  @OneToOne(() => Entry, entry => entry.image)
-  entry: Entry
+  @OneToOne(() => Transaction, transaction => transaction.image)
+  transaction: Transaction
 
   @Exclude()
   @OneToOne(() => Category, category => category.image)

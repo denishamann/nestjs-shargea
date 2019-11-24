@@ -12,7 +12,7 @@ import {
   VersionColumn,
 } from 'typeorm'
 import * as bcrypt from 'bcryptjs'
-import { Entry } from '../entries/entry.entity'
+import { Transaction } from '../transactions/transaction.entity'
 import { Category } from '../categories/category.entity'
 import { Media } from '../media/media.entity'
 import { CurrencyEnum } from './currency.enum'
@@ -84,8 +84,8 @@ export class User extends BaseEntity {
   media: Media[]
 
   @Exclude()
-  @OneToMany(() => Entry, entry => entry.user)
-  entries: Entry[]
+  @OneToMany(() => Transaction, transaction => transaction.user)
+  transactions: Transaction[]
 
   @Exclude()
   @OneToMany(() => Category, category => category.user)

@@ -12,7 +12,7 @@ import {
   VersionColumn,
 } from 'typeorm'
 import { User } from '../user/user.entity'
-import { Entry } from '../entries/entry.entity'
+import { Transaction } from '../transactions/transaction.entity'
 import { Media } from '../media/media.entity'
 import uuid from 'uuid'
 import { Exclude } from 'class-transformer'
@@ -62,8 +62,8 @@ export class Category extends BaseEntity {
   userForDefaultCategory: User
 
   @Exclude()
-  @OneToMany(() => Entry, entry => entry.category)
-  entries: Entry[]
+  @OneToMany(() => Transaction, transaction => transaction.category)
+  transactions: Transaction[]
 
   @Exclude()
   @ManyToOne(() => User, user => user.categories, { onDelete: 'CASCADE' })

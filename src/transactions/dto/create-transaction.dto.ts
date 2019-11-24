@@ -3,7 +3,7 @@ import uuid from 'uuid'
 import { Transform } from 'class-transformer'
 import { ApiModelProperty, ApiModelPropertyOptional } from '@nestjs/swagger'
 
-export class CreateEntryDto {
+export class CreateTransactionDto {
 
   @ApiModelProperty()
   @IsNotEmpty()

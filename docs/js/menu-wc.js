@@ -133,39 +133,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ConfigModule.html" data-type="entity-link">ConfigModule</a>
                             </li>
                             <li class="link">
-                                <a href="modules/EntriesModule.html" data-type="entity-link">EntriesModule</a>
-                                    <li class="chapter inner">
-                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#controllers-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' : 'data-target="#xs-controllers-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' }>
-                                            <span class="icon ion-md-swap"></span>
-                                            <span>Controllers</span>
-                                            <span class="icon ion-ios-arrow-down"></span>
-                                        </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' :
-                                            'id="xs-controllers-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' }>
-                                            <li class="link">
-                                                <a href="controllers/EntriesController.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">EntriesController</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <li class="chapter inner">
-                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' : 'data-target="#xs-injectables-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' }>
-                                        <span class="icon ion-md-arrow-round-down"></span>
-                                        <span>Injectables</span>
-                                        <span class="icon ion-ios-arrow-down"></span>
-                                    </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' :
-                                        'id="xs-injectables-links-module-EntriesModule-266d4f1d48c4f69dde56627c54908ddd"' }>
-                                        <li class="link">
-                                            <a href="injectables/EntriesService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>EntriesService</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </li>
-                            <li class="link">
                                 <a href="modules/MediaModule.html" data-type="entity-link">MediaModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
@@ -194,6 +161,39 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <li class="link">
                                             <a href="injectables/MediaService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>MediaService</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/TransactionsModule.html" data-type="entity-link">TransactionsModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' : 'data-target="#xs-controllers-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' :
+                                            'id="xs-controllers-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' }>
+                                            <li class="link">
+                                                <a href="controllers/TransactionsController.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">TransactionsController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' : 'data-target="#xs-injectables-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' :
+                                        'id="xs-injectables-links-module-TransactionsModule-28de7ffa1e9aacc82e65529d6bbe08ea"' }>
+                                        <li class="link">
+                                            <a href="injectables/TransactionsService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>TransactionsService</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -257,22 +257,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/CreateCategoryDto.html" data-type="entity-link">CreateCategoryDto</a>
                             </li>
                             <li class="link">
-                                <a href="classes/CreateEntryDto.html" data-type="entity-link">CreateEntryDto</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/CreateMediaDto.html" data-type="entity-link">CreateMediaDto</a>
                             </li>
                             <li class="link">
-                                <a href="classes/Entry.html" data-type="entity-link">Entry</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/EntryRepository.html" data-type="entity-link">EntryRepository</a>
+                                <a href="classes/CreateTransactionDto.html" data-type="entity-link">CreateTransactionDto</a>
                             </li>
                             <li class="link">
                                 <a href="classes/GetCategoriesFilterDto.html" data-type="entity-link">GetCategoriesFilterDto</a>
                             </li>
                             <li class="link">
-                                <a href="classes/GetEntriesFilterDto.html" data-type="entity-link">GetEntriesFilterDto</a>
+                                <a href="classes/GetTransactionsFilterDto.html" data-type="entity-link">GetTransactionsFilterDto</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Media.html" data-type="entity-link">Media</a>
@@ -281,13 +275,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/MediaRepository.html" data-type="entity-link">MediaRepository</a>
                             </li>
                             <li class="link">
+                                <a href="classes/Transaction.html" data-type="entity-link">Transaction</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/TransactionRepository.html" data-type="entity-link">TransactionRepository</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/UpdateCategoryDto.html" data-type="entity-link">UpdateCategoryDto</a>
                             </li>
                             <li class="link">
-                                <a href="classes/UpdateEntryDto.html" data-type="entity-link">UpdateEntryDto</a>
+                                <a href="classes/UpdateMediaDto.html" data-type="entity-link">UpdateMediaDto</a>
                             </li>
                             <li class="link">
-                                <a href="classes/UpdateMediaDto.html" data-type="entity-link">UpdateMediaDto</a>
+                                <a href="classes/UpdateTransactionDto.html" data-type="entity-link">UpdateTransactionDto</a>
                             </li>
                             <li class="link">
                                 <a href="classes/UpdateUserDto.html" data-type="entity-link">UpdateUserDto</a>

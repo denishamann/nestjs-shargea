@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>EntriesService</li>
+  <li>TransactionsService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/entries/entries.service.ts</code>
+            <code>src/transactions/transactions.service.ts</code>
         </p>
 
 
@@ -93,22 +93,22 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createEntry">createEntry</a>
+                                <a href="#createTransaction">createTransaction</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#deleteEntry">deleteEntry</a>
-                            </li>
-                            <li>
-                                <a href="#getEntries">getEntries</a>
+                                <a href="#deleteTransaction">deleteTransaction</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getEntryById">getEntryById</a>
+                                <a href="#getTransactionById">getTransactionById</a>
+                            </li>
+                            <li>
+                                <a href="#getTransactions">getTransactions</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#updateEntry">updateEntry</a>
+                                <a href="#updateTransaction">updateTransaction</a>
                             </li>
                         </ul>
                     </td>
@@ -128,12 +128,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(entryRepository: <a href="../classes/EntryRepository.html">EntryRepository</a>, mediaService: <a href="../injectables/MediaService.html">MediaService</a>, categoriesService: <a href="../injectables/CategoriesService.html">CategoriesService</a>)</code>
+<code>constructor(transactionRepository: <a href="../classes/TransactionRepository.html">TransactionRepository</a>, mediaService: <a href="../injectables/MediaService.html">MediaService</a>, categoriesService: <a href="../injectables/CategoriesService.html">CategoriesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/entries/entries.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/transactions/transactions.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -151,10 +151,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>entryRepository</td>
+                                                        <td>transactionRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/EntryRepository.html" target="_self" >EntryRepository</a></code>
+                                                                        <code><a href="../classes/TransactionRepository.html" target="_self" >TransactionRepository</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -204,20 +204,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createEntry"></a>
+                    <a name="createTransaction"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            createEntry
+                            createTransaction
                         </b>
-                        <a href="#createEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#createTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createEntry(createEntryDto: <a href="../classes/CreateEntryDto.html">CreateEntryDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+                    <code>createTransaction(createTransactionDto: <a href="../classes/CreateTransactionDto.html">CreateTransactionDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -225,7 +225,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/entries/entries.service.ts:38</a></div>
+                            class="link-to-prism">src/transactions/transactions.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -245,9 +245,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>createEntryDto</td>
+                                    <td>createTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/CreateEntryDto.html" target="_self" >CreateEntryDto</a></code>
+                                                <code><a href="../classes/CreateTransactionDto.html" target="_self" >CreateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -274,7 +274,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -288,20 +288,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="deleteEntry"></a>
+                    <a name="deleteTransaction"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            deleteEntry
+                            deleteTransaction
                         </b>
-                        <a href="#deleteEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#deleteTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>deleteEntry(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
+                    <code>deleteTransaction(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -309,7 +309,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/entries/entries.service.ts:94</a></div>
+                            class="link-to-prism">src/transactions/transactions.service.ts:94</a></div>
                 </td>
             </tr>
 
@@ -372,18 +372,101 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getEntries"></a>
+                    <a name="getTransactionById"></a>
                     <span class="name">
                         <b>
-                            getEntries
+                            <span class="modifier">Async</span>
+                            getTransactionById
                         </b>
-                        <a href="#getEntries"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getTransactionById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getEntries(filterDto: <a href="../classes/GetEntriesFilterDto.html">GetEntriesFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTransactionById(id: uuid, user)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/transactions/transactions.service.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                            <code>uuid</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransactions"></a>
+                    <span class="name">
+                        <b>
+                            getTransactions
+                        </b>
+                        <a href="#getTransactions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransactions(filterDto: <a href="../classes/GetTransactionsFilterDto.html">GetTransactionsFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -391,7 +474,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/entries/entries.service.ts:25</a></div>
+                            class="link-to-prism">src/transactions/transactions.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -413,7 +496,7 @@
                                 <tr>
                                     <td>filterDto</td>
                                     <td>
-                                                <code><a href="../classes/GetEntriesFilterDto.html" target="_self" >GetEntriesFilterDto</a></code>
+                                                <code><a href="../classes/GetTransactionsFilterDto.html" target="_self" >GetTransactionsFilterDto</a></code>
                                     </td>
 
                                     <td>
@@ -440,7 +523,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -454,103 +537,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getEntryById"></a>
+                    <a name="updateTransaction"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            getEntryById
+                            updateTransaction
                         </b>
-                        <a href="#getEntryById"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getEntryById(id: uuid, user)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/entries/entries.service.ts:29</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                            <code>uuid</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updateEntry"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            updateEntry
-                        </b>
-                        <a href="#updateEntry"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateEntry(id: uuid, updateEntryDto: <a href="../classes/UpdateEntryDto.html">UpdateEntryDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+                    <code>updateTransaction(id: uuid, updateTransactionDto: <a href="../classes/UpdateTransactionDto.html">UpdateTransactionDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -558,7 +558,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/entries/entries.service.ts:55</a></div>
+                            class="link-to-prism">src/transactions/transactions.service.ts:55</a></div>
                 </td>
             </tr>
 
@@ -590,9 +590,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateEntryDto</td>
+                                    <td>updateTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/UpdateEntryDto.html" target="_self" >UpdateEntryDto</a></code>
+                                                <code><a href="../classes/UpdateTransactionDto.html" target="_self" >UpdateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -619,7 +619,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -656,7 +656,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/entries/entries.service.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/transactions/transactions.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -670,110 +670,110 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable, Logger, NotFoundException } from &#x27;@nestjs/common&#x27;
-import { EntryRepository } from &#x27;./entry.repository&#x27;
+import { TransactionRepository } from &#x27;./transaction.repository&#x27;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;
-import { Entry } from &#x27;./entry.entity&#x27;
-import { CreateEntryDto } from &#x27;./dto/create-entry.dto&#x27;
-import { GetEntriesFilterDto } from &#x27;./dto/get-entries-filter.dto&#x27;
+import { Transaction } from &#x27;./transaction.entity&#x27;
+import { CreateTransactionDto } from &#x27;./dto/create-transaction.dto&#x27;
+import { GetTransactionsFilterDto } from &#x27;./dto/get-transactions-filter.dto&#x27;
 import { User } from &#x27;../user/user.entity&#x27;
 import uuid from &#x27;uuid&#x27;
-import { UpdateEntryDto } from &#x27;./dto/update-entry.dto&#x27;
+import { UpdateTransactionDto } from &#x27;./dto/update-transaction.dto&#x27;
 import { MediaService } from &#x27;../media/media.service&#x27;
 import { CategoriesService } from &#x27;../categories/categories.service&#x27;
 
 @Injectable()
-export class EntriesService {
+export class TransactionsService {
   private readonly logger &#x3D; new Logger()
 
   constructor(
-    @InjectRepository(EntryRepository)
-    private readonly entryRepository: EntryRepository,
+    @InjectRepository(TransactionRepository)
+    private readonly transactionRepository: TransactionRepository,
     private readonly mediaService: MediaService,
     private readonly categoriesService: CategoriesService,
   ) {
   }
 
-  getEntries(filterDto: GetEntriesFilterDto, user: User): Promise&lt;Entry[]&gt; {
-    return this.entryRepository.getEntries(filterDto, user)
+  getTransactions(filterDto: GetTransactionsFilterDto, user: User): Promise&lt;Transaction[]&gt; {
+    return this.transactionRepository.getTransactions(filterDto, user)
   }
 
-  async getEntryById(id: uuid, user): Promise&lt;Entry&gt; {
-    const result &#x3D; await this.entryRepository.findOne({ where: { id, userId: user.id } })
+  async getTransactionById(id: uuid, user): Promise&lt;Transaction&gt; {
+    const result &#x3D; await this.transactionRepository.findOne({ where: { id, userId: user.id } })
     if (!result) {
-      throw new NotFoundException(&#x60;Entry with ID &quot;${id}&quot; not found.&#x60;)
+      throw new NotFoundException(&#x60;Transaction with ID &quot;${id}&quot; not found.&#x60;)
     } else {
       return result
     }
   }
 
-  async createEntry(createEntryDto: CreateEntryDto, user: User): Promise&lt;Entry&gt; {
+  async createTransaction(createTransactionDto: CreateTransactionDto, user: User): Promise&lt;Transaction&gt; {
     try {
       // those calls are done to ensure that the category and/or media provided belongs to the user
       // TODO: replace this to do only one db call
-      if (createEntryDto.imageId) {
-        await this.mediaService.getMediaById(createEntryDto.imageId, user)
+      if (createTransactionDto.imageId) {
+        await this.mediaService.getMediaById(createTransactionDto.imageId, user)
       }
-      if (createEntryDto.categoryId) {
-        await this.categoriesService.getCategoryById(createEntryDto.categoryId, user)
+      if (createTransactionDto.categoryId) {
+        await this.categoriesService.getCategoryById(createTransactionDto.categoryId, user)
       }
     } catch (e) {
-      this.logger.warn(&#x60;createEntry: mediaId or categoryId from other user&#x60;, e)
+      this.logger.warn(&#x60;createTransaction: mediaId or categoryId from other user&#x60;, e)
       throw new BadRequestException(&#x27;Invalid mediaId or categoryId provided.&#x27;)
     }
-    return this.entryRepository.createEntry(createEntryDto, user)
+    return this.transactionRepository.createTransaction(createTransactionDto, user)
   }
 
-  async updateEntry(id: uuid, updateEntryDto: UpdateEntryDto, user: User): Promise&lt;Entry&gt; {
-    const entry &#x3D; await this.getEntryById(id, user)
+  async updateTransaction(id: uuid, updateTransactionDto: UpdateTransactionDto, user: User): Promise&lt;Transaction&gt; {
+    const transaction &#x3D; await this.getTransactionById(id, user)
 
-    // because entryRepository.updateEntry modifies the object ...
-    const previousImageId &#x3D; entry.imageId
+    // because transactionRepository.updateTransaction modifies the object ...
+    const previousImageId &#x3D; transaction.imageId
 
-    if (Object.entries(updateEntryDto).length &#x3D;&#x3D;&#x3D; 0) {
-      return entry
+    if (Object.entries(updateTransactionDto).length &#x3D;&#x3D;&#x3D; 0) {
+      return transaction
     }
     try {
       // those calls are done to ensure that the category and/or media provided belongs to the user
       // TODO: replace this to do only one db call
-      if (updateEntryDto.imageId) {
-        await this.mediaService.getMediaById(updateEntryDto.imageId, user)
+      if (updateTransactionDto.imageId) {
+        await this.mediaService.getMediaById(updateTransactionDto.imageId, user)
       }
-      if (updateEntryDto.categoryId) {
-        await this.categoriesService.getCategoryById(updateEntryDto.categoryId, user)
+      if (updateTransactionDto.categoryId) {
+        await this.categoriesService.getCategoryById(updateTransactionDto.categoryId, user)
       }
     } catch (e) {
-      this.logger.warn(&#x60;updateEntry: mediaId or categoryId from other user&#x60;, e)
+      this.logger.warn(&#x60;updateTransaction: mediaId or categoryId from other user&#x60;, e)
       throw new BadRequestException(&#x27;Invalid mediaId or categoryId provided.&#x27;)
     }
 
-    const updatedEntry &#x3D; await this.entryRepository.updateEntry(entry, updateEntryDto)
+    const updatedTransaction &#x3D; await this.transactionRepository.updateTransaction(transaction, updateTransactionDto)
 
     if (
       previousImageId
-      &amp;&amp; updateEntryDto.hasOwnProperty(&#x27;imageId&#x27;)
-      &amp;&amp; (updateEntryDto.imageId &#x3D;&#x3D;&#x3D; null || updateEntryDto.imageId !&#x3D;&#x3D; previousImageId)
+      &amp;&amp; updateTransactionDto.hasOwnProperty(&#x27;imageId&#x27;)
+      &amp;&amp; (updateTransactionDto.imageId &#x3D;&#x3D;&#x3D; null || updateTransactionDto.imageId !&#x3D;&#x3D; previousImageId)
     ) {
       try {
         await this.mediaService.deleteMedia(previousImageId, user)
       } catch (e) {
-        this.logger.error(&#x60;Entry successfully updated but media with id ${previousImageId} could not be deleted.&#x60;)
+        this.logger.error(&#x60;Transaction successfully updated but media with id ${previousImageId} could not be deleted.&#x60;)
       }
     }
-    return updatedEntry
+    return updatedTransaction
   }
 
-  async deleteEntry(id: uuid, user: User): Promise&lt;void&gt; {
-    const { imageId } &#x3D; await this.getEntryById(id, user)
-    const res &#x3D; await this.entryRepository.delete({ id, userId: user.id })
+  async deleteTransaction(id: uuid, user: User): Promise&lt;void&gt; {
+    const { imageId } &#x3D; await this.getTransactionById(id, user)
+    const res &#x3D; await this.transactionRepository.delete({ id, userId: user.id })
 
     if (res.affected &#x3D;&#x3D;&#x3D; 0) {
-      throw new NotFoundException(&#x60;Entry with ID &quot;${id}&quot; not found.&#x60;)
+      throw new NotFoundException(&#x60;Transaction with ID &quot;${id}&quot; not found.&#x60;)
     }
     if (imageId) {
       try {
         await this.mediaService.deleteMedia(imageId, user)
       } catch (e) {
-        this.logger.error(&#x60;Entry successfully deleted but media with id ${imageId} could not be deleted.&#x60;)
+        this.logger.error(&#x60;Transaction successfully deleted but media with id ${imageId} could not be deleted.&#x60;)
       }
     }
   }
@@ -811,7 +811,7 @@ export class EntriesService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'EntriesService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TransactionsService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

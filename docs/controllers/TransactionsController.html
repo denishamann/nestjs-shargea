@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li>EntriesController</li>
+  <li>TransactionsController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -54,14 +54,14 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/entries/entries.controller.ts</code>
+            <code>src/transactions/transactions.controller.ts</code>
         </p>
 
             <p class="comment">
                 <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>entries</code>
+                <code>transactions</code>
             </p>
 
 
@@ -82,19 +82,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#createEntry">createEntry</a>
+                                <a href="#createTransaction">createTransaction</a>
                             </li>
                             <li>
-                                <a href="#deleteEntry">deleteEntry</a>
+                                <a href="#deleteTransaction">deleteTransaction</a>
                             </li>
                             <li>
-                                <a href="#getEntries">getEntries</a>
+                                <a href="#getTransactionById">getTransactionById</a>
                             </li>
                             <li>
-                                <a href="#getEntryById">getEntryById</a>
+                                <a href="#getTransactions">getTransactions</a>
                             </li>
                             <li>
-                                <a href="#updateEntry">updateEntry</a>
+                                <a href="#updateTransaction">updateTransaction</a>
                             </li>
                         </ul>
                     </td>
@@ -117,18 +117,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createEntry"></a>
+                    <a name="createTransaction"></a>
                     <span class="name">
                         <b>
-                            createEntry
+                            createTransaction
                         </b>
-                        <a href="#createEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#createTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createEntry(createEntryDto: <a href="../classes/CreateEntryDto.html">CreateEntryDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+<code>createTransaction(createTransactionDto: <a href="../classes/CreateTransactionDto.html">CreateTransactionDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -143,7 +143,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/entries/entries.controller.ts:59</a></div>
+                            class="link-to-prism">src/transactions/transactions.controller.ts:59</a></div>
                 </td>
             </tr>
 
@@ -163,9 +163,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>createEntryDto</td>
+                                    <td>createTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/CreateEntryDto.html" target="_self" >CreateEntryDto</a></code>
+                                                <code><a href="../classes/CreateTransactionDto.html" target="_self" >CreateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -192,7 +192,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -206,18 +206,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="deleteEntry"></a>
+                    <a name="deleteTransaction"></a>
                     <span class="name">
                         <b>
-                            deleteEntry
+                            deleteTransaction
                         </b>
-                        <a href="#deleteEntry"><span class="icon ion-ios-link"></span></a>
+                        <a href="#deleteTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>deleteEntry(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
+<code>deleteTransaction(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -232,7 +232,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/entries/entries.controller.ts:78</a></div>
+                            class="link-to-prism">src/transactions/transactions.controller.ts:78</a></div>
                 </td>
             </tr>
 
@@ -295,18 +295,107 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getEntries"></a>
+                    <a name="getTransactionById"></a>
                     <span class="name">
                         <b>
-                            getEntries
+                            getTransactionById
                         </b>
-                        <a href="#getEntries"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getTransactionById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getEntries(filterDto: <a href="../classes/GetEntriesFilterDto.html">GetEntriesFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+<code>getTransactionById(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;/:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/transactions/transactions.controller.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                            <code>uuid</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransactions"></a>
+                    <span class="name">
+                        <b>
+                            getTransactions
+                        </b>
+                        <a href="#getTransactions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransactions(filterDto: <a href="../classes/GetTransactionsFilterDto.html">GetTransactionsFilterDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -321,7 +410,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/entries/entries.controller.ts:41</a></div>
+                            class="link-to-prism">src/transactions/transactions.controller.ts:41</a></div>
                 </td>
             </tr>
 
@@ -343,7 +432,7 @@
                                 <tr>
                                     <td>filterDto</td>
                                     <td>
-                                                <code><a href="../classes/GetEntriesFilterDto.html" target="_self" >GetEntriesFilterDto</a></code>
+                                                <code><a href="../classes/GetTransactionsFilterDto.html" target="_self" >GetTransactionsFilterDto</a></code>
                                     </td>
 
                                     <td>
@@ -370,7 +459,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -384,107 +473,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getEntryById"></a>
+                    <a name="updateTransaction"></a>
                     <span class="name">
                         <b>
-                            getEntryById
+                            updateTransaction
                         </b>
-                        <a href="#getEntryById"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateTransaction"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getEntryById(id: uuid, user: <a href="../classes/User.html">User</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get(&#x27;/:id&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/entries/entries.controller.ts:50</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                            <code>uuid</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updateEntry"></a>
-                    <span class="name">
-                        <b>
-                            updateEntry
-                        </b>
-                        <a href="#updateEntry"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>updateEntry(id: uuid, updateEntryDto: <a href="../classes/UpdateEntryDto.html">UpdateEntryDto</a>, user: <a href="../classes/User.html">User</a>)</code>
+<code>updateTransaction(id: uuid, updateTransactionDto: <a href="../classes/UpdateTransactionDto.html">UpdateTransactionDto</a>, user: <a href="../classes/User.html">User</a>)</code>
                 </td>
             </tr>
 
@@ -499,7 +499,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/entries/entries.controller.ts:69</a></div>
+                            class="link-to-prism">src/transactions/transactions.controller.ts:69</a></div>
                 </td>
             </tr>
 
@@ -531,9 +531,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateEntryDto</td>
+                                    <td>updateTransactionDto</td>
                                     <td>
-                                                <code><a href="../classes/UpdateEntryDto.html" target="_self" >UpdateEntryDto</a></code>
+                                                <code><a href="../classes/UpdateTransactionDto.html" target="_self" >UpdateTransactionDto</a></code>
                                     </td>
 
                                     <td>
@@ -560,7 +560,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Entry.html" target="_self" >Promise&lt;Entry&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Transaction.html" target="_self" >Promise&lt;Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -591,71 +591,71 @@
   UsePipes,
   ValidationPipe,
 } from &#x27;@nestjs/common&#x27;
-import { EntriesService } from &#x27;./entries.service&#x27;
-import { CreateEntryDto } from &#x27;./dto/create-entry.dto&#x27;
-import { GetEntriesFilterDto } from &#x27;./dto/get-entries-filter.dto&#x27;
-import { Entry } from &#x27;./entry.entity&#x27;
+import { TransactionsService } from &#x27;./transactions.service&#x27;
+import { CreateTransactionDto } from &#x27;./dto/create-transaction.dto&#x27;
+import { GetTransactionsFilterDto } from &#x27;./dto/get-transactions-filter.dto&#x27;
+import { Transaction } from &#x27;./transaction.entity&#x27;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;
 import { User } from &#x27;../user/user.entity&#x27;
 import { GetUser } from &#x27;../user/get-user.decorator&#x27;
 import uuid from &#x27;uuid&#x27;
-import { UpdateEntryDto } from &#x27;./dto/update-entry.dto&#x27;
+import { UpdateTransactionDto } from &#x27;./dto/update-transaction.dto&#x27;
 import { ApiBearerAuth, ApiUseTags } from &#x27;@nestjs/swagger&#x27;
 
 @ApiBearerAuth()
-@ApiUseTags(&#x27;entries&#x27;)
-@Controller(&#x27;entries&#x27;)
+@ApiUseTags(&#x27;transactions&#x27;)
+@Controller(&#x27;transactions&#x27;)
 @UseGuards(AuthGuard())
 @UseInterceptors(ClassSerializerInterceptor)
-export class EntriesController {
-  private logger &#x3D; new Logger(&#x27;EntriesController&#x27;)
+export class TransactionsController {
+  private logger &#x3D; new Logger(&#x27;TransactionsController&#x27;)
 
-  constructor(private readonly entriesService: EntriesService) {
+  constructor(private readonly transactionsService: TransactionsService) {
   }
 
   @Get()
-  getEntries(
-    @Query(new ValidationPipe({ whitelist: true, transform: true })) filterDto: GetEntriesFilterDto,
+  getTransactions(
+    @Query(new ValidationPipe({ whitelist: true, transform: true })) filterDto: GetTransactionsFilterDto,
     @GetUser() user: User,
-  ): Promise&lt;Entry[]&gt; {
-    this.logger.verbose(&#x60;User &quot;${user.email}&quot; retrieving all entries. Filters: ${JSON.stringify(filterDto)}&#x60;)
-    return this.entriesService.getEntries(filterDto, user)
+  ): Promise&lt;Transaction[]&gt; {
+    this.logger.verbose(&#x60;User &quot;${user.email}&quot; retrieving all transactions. Filters: ${JSON.stringify(filterDto)}&#x60;)
+    return this.transactionsService.getTransactions(filterDto, user)
   }
 
   @Get(&#x27;/:id&#x27;)
-  getEntryById(
+  getTransactionById(
     @Param(&#x27;id&#x27;, new ParseUUIDPipe()) id: uuid,
     @GetUser() user: User,
-  ): Promise&lt;Entry&gt; {
-    return this.entriesService.getEntryById(id, user)
+  ): Promise&lt;Transaction&gt; {
+    return this.transactionsService.getTransactionById(id, user)
   }
 
   @Post()
   @UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
-  createEntry(
-    @Body() createEntryDto: CreateEntryDto,
+  createTransaction(
+    @Body() createTransactionDto: CreateTransactionDto,
     @GetUser() user: User,
-  ): Promise&lt;Entry&gt; {
-    this.logger.verbose(&#x60;User &quot;${user.email}&quot; creating a new entry. Data: ${JSON.stringify(createEntryDto)}&#x60;)
-    return this.entriesService.createEntry(createEntryDto, user)
+  ): Promise&lt;Transaction&gt; {
+    this.logger.verbose(&#x60;User &quot;${user.email}&quot; creating a new transaction. Data: ${JSON.stringify(createTransactionDto)}&#x60;)
+    return this.transactionsService.createTransaction(createTransactionDto, user)
   }
 
   @Patch(&#x27;/:id&#x27;)
   @UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
-  updateEntry(
+  updateTransaction(
     @Param(&#x27;id&#x27;, new ParseUUIDPipe()) id: uuid,
-    @Body() updateEntryDto: UpdateEntryDto,
+    @Body() updateTransactionDto: UpdateTransactionDto,
     @GetUser() user: User,
-  ): Promise&lt;Entry&gt; {
-    return this.entriesService.updateEntry(id, updateEntryDto, user)
+  ): Promise&lt;Transaction&gt; {
+    return this.transactionsService.updateTransaction(id, updateTransactionDto, user)
   }
 
   @Delete(&#x27;/:id&#x27;)
-  deleteEntry(
+  deleteTransaction(
     @Param(&#x27;id&#x27;, new ParseUUIDPipe()) id: uuid,
     @GetUser() user: User,
   ): Promise&lt;void&gt; {
-    return this.entriesService.deleteEntry(id, user)
+    return this.transactionsService.deleteTransaction(id, user)
   }
 }
 </code></pre>
@@ -692,7 +692,7 @@ export class EntriesController {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'EntriesController.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TransactionsController.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

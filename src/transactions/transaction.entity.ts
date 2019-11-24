@@ -17,7 +17,7 @@ import uuid from 'uuid'
 import { Exclude, Transform } from 'class-transformer'
 
 @Entity()
-export class Entry extends BaseEntity {
+export class Transaction extends BaseEntity {
 
   @PrimaryGeneratedColumn('uuid')
   id: uuid
@@ -59,15 +59,15 @@ export class Entry extends BaseEntity {
    */
 
   @Exclude()
-  @OneToOne(() => Media, media => media.entry)
+  @OneToOne(() => Media, media => media.transaction)
   @JoinColumn()
   image: Media
 
   @Exclude()
-  @ManyToOne(() => Category, category => category.entries)
+  @ManyToOne(() => Category, category => category.transactions)
   category: Category
 
   @Exclude()
-  @ManyToOne(() => User, user => user.entries, { onDelete: 'CASCADE' })
+  @ManyToOne(() => User, user => user.transactions, { onDelete: 'CASCADE' })
   user: User
 }

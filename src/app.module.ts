@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
 import { AuthModule } from './auth/auth.module'
-import { EntriesModule } from './entries/entries.module'
+import { TransactionsModule } from './transactions/transactions.module'
 import { CategoriesModule } from './categories/categories.module'
 import { MediaModule } from './media/media.module'
 import { UsersModule } from './user/users.module'
@@ -29,7 +29,7 @@ import { ConfigService } from './config/config.service'
     }),
     ConfigModule,
     AuthModule,
-    EntriesModule,
+    TransactionsModule,
     CategoriesModule,
     MediaModule,
     UsersModule,
